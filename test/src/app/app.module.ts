@@ -18,7 +18,7 @@ import { CoursesService } from './courses.service';
     AppRoutingModule
   ],
   providers: [
-    CoursesService
+    // CoursesService
   ],
   bootstrap: [AppComponent]
 })
