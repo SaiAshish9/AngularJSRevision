@@ -3,17 +3,11 @@
 //     y: number,
 //     draw:()=>void
 // }
-class Point {
-    draw() {
-        console.log(this.x, this.y);
-    }
-    getDistance(another) {
-    }
-}
-let point = new Point();
+import { Point } from './point';
+// !point.ts
+let point = new Point(1, 3);
 point.x = 1;
-point.y = 2;
+console.log(point.x);
 point.draw();
 // let drawPoint=(point:Point) => {
 // }
-// cohesion grouping similar things together

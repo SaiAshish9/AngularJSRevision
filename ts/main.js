@@ -1,7 +1,7 @@
 function logger() {
-    // console.log(msg);
-    for (var i = 0; i < 5; i++)
+    for (var i = 0; i < 5; i++) {
         console.log(i);
+    }
     console.log(i);
 }
 logger();

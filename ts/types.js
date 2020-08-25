@@ -1,10 +1,10 @@
-var count = 5;
+let count = 5;
 // count='a'; error type number
-var a;
+let a;
 //  any
 a = true;
 a = 3;
-var b;
+let b;
 b = 3;
 // number any string boolean number[]=[1,2,3] any[]=[1,true]
 var C;
@@ -14,7 +14,7 @@ var C;
 })(C || (C = {}));
 ;
 console.log(C.A);
-var f = [1, true];
+let f = [1, true];
 // f=false; error
 // f=[true];
 console.log(a, b, f);
