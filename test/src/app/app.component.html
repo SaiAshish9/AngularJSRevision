@@ -1,3 +1,10 @@
 <h1>Angular</h1>
-<app-course></app-course>
-<courses></courses>
+
+<app-favorite
+[is-favorite]="post.isFavorite"
+(click)="onFavChange()"
+></app-favorite>
+
+<!-- <app-course 
+[is-favorite]="post.isFavorite" ></app-course>
+<courses></courses> -->
