@@ -1,5 +1,5 @@
 import { CoursesService } from './courses.service';
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 // decorator fn
 @Component({
@@ -34,7 +34,13 @@ import { Component} from '@angular/core';
         </button>
       </div>
       <input (keyup.enter)="onKeyUp($event)" />
-    </div>
+      <br/>
+      <input #email (keyup.enter)="onKey(email.value)" />
+      <br/>
+      <input [value]="email1" (keyup.enter)="email1=$event.target.value;onKeyUp1()" />
+      <br/>
+      <input [(ngModel)]="email2" (keyup.enter)="onKeyUp2()" />
+      </div>
   `,
   // {{getTitle()}} string interpolation
   // <course>   "courses" </course>
@@ -48,11 +54,27 @@ export class CoursesComponent {
   imageUrl = 'http://lorempixel.com/400/200';
   courses;
   isActive = true;
+  email;
+  email1="me@example.com";
+  email2;
 
+
+  onKeyUp2() {
+  console.log(this.email2)
+  }
   onKeyUp($event) {
     // if ($event.keyCode === 13) {
     //   alert($event.target.value);
     // }
+  }
+
+  onKeyUp1(){
+    console.log(this.email1)
+  }
+
+  onKey(email) {
+    // alert(email);
+  alert(this.email)
   }
 
   onDivClicked($event) {
