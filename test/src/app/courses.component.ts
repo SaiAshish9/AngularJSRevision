@@ -40,6 +40,13 @@ import { Component } from '@angular/core';
       <input [value]="email1" (keyup.enter)="email1=$event.target.value;onKeyUp1()" />
       <br/>
       <input [(ngModel)]="email2" (keyup.enter)="onKeyUp2()" />
+      {{title | uppercase | lowercase  }}
+      {{ colSpan | number | currency}}
+      {{colSpan |percent}}
+      {{colSpan | number:'1.2-2'}}
+      {{colSpan | number:'1.1-1'}}<br/>
+      {{colSpan |currency:'AUD':true:'3.2-2'}}
+      {{date| date:'shortDate'}}
       </div>
   `,
   // {{getTitle()}} string interpolation
@@ -50,13 +57,14 @@ import { Component } from '@angular/core';
 export class CoursesComponent {
   title = 'List of courses';
   color = '#fff';
-  colSpan = 2;
+  colSpan = 28;
   imageUrl = 'http://lorempixel.com/400/200';
   courses;
   isActive = true;
   email;
   email1="me@example.com";
   email2;
+  date=new Date(2016,3,1);
 
 
   onKeyUp2() {
