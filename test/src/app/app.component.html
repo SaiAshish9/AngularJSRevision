@@ -2,9 +2,10 @@
 
 <app-favorite
 [is-favorite]="post.isFavorite"
-(click)="onFavChange()"
+(change)="onFavChange($event)"
 ></app-favorite>
 
 <!-- <app-course 
 [is-favorite]="post.isFavorite" ></app-course>
 <courses></courses> -->
+<!-- templates are bundled along with source code after transpilation -->
