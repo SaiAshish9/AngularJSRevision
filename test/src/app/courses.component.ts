@@ -46,7 +46,8 @@ import { Component } from '@angular/core';
       {{colSpan | number:'1.2-2'}}
       {{colSpan | number:'1.1-1'}}<br/>
       {{colSpan |currency:'AUD':true:'3.2-2'}}
-      {{date| date:'shortDate'}}
+      {{date| date:'shortDate'}}<br/>
+      {{text | summary:10}}
       </div>
   `,
   // {{getTitle()}} string interpolation
@@ -61,6 +62,7 @@ export class CoursesComponent {
   imageUrl = 'http://lorempixel.com/400/200';
   courses;
   isActive = true;
+  text="lorem ipsum dolor sit amet, consectetur adipiscing"
   email;
   email1="me@example.com";
   email2;
