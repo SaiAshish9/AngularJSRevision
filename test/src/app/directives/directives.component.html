@@ -54,8 +54,10 @@ trackBy:trackCourse
 
 <ul class="nav nav-pills">
     <li>
-        <button class="btn" [class.btn-secondary]="viewMode!='map'" [class.btn-primary]="viewMode=='map'"><a
-                (click)="viewMode='map'">Map
+        <button class="btn" [ngClass]="{
+             'btn-secondary':viewMode!='map',
+             'btn-primary':viewMode=='map'
+         }"><a (click)="viewMode='map'">Map
                 View</a></button>
     </li>
     <li>

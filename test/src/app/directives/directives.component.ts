@@ -24,7 +24,7 @@ export class DirectivesComponent {
       { id: 1, name: 'list option 2' },
     ];
   }
-
+ 
   trackCourse(index,course){
    return course?course.id:undefined;
   }
