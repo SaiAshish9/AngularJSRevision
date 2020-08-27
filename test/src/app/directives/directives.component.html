@@ -7,9 +7,26 @@
 <div *ngIf="courses.length>0;then courses1  else noCourses ">
 </div>
 
-<div *ngFor="let course of courses;">
-    {{course}}
+<button class="btn btn-success" (click)="onAdd()">Add</button>
+
+<div *ngFor="let course of loopData; index as i; even as isEven;">
+    {{i}}- {{course.name}}
+
+    <span *ngIf="isEven">
+        EVEN
+    </span>
+    <button 
+    (click)="onRemove(course)"
+    class="btn btn-danger">
+     X
+    </button>
+    <button (click)="onChange(course)" class="btn btn-warning">
+        i
+    </button>
 </div>
+
+<!-- index-> exported value  -->
+<!-- first last even odd -->
 
 <div hidden>
     Visible
@@ -40,14 +57,12 @@
                 View</a></button>
     </li>
     <li>
-    <button class="btn" [class.btn-secondary]="viewMode!='list'" [class.btn-primary]="viewMode=='list'"><a
-            (click)="viewMode='list'">List
-            View</a></button>
+        <button class="btn" [class.btn-secondary]="viewMode!='list'" [class.btn-primary]="viewMode=='list'"><a
+                (click)="viewMode='list'">List
+                View</a></button>
     </li>
     <li>
-        <button 
-        (click)="viewMode='default'"
-        class="btn btn-dark">
+        <button (click)="viewMode='default'" class="btn btn-dark">
             Default
         </button>
     </li>
