@@ -70,7 +70,6 @@ trackBy:trackCourse
             Default
         </button>
     </li>
-
 </ul>
 
 <div [ngSwitch]="viewMode">
@@ -78,3 +77,22 @@ trackBy:trackCourse
     <div *ngSwitchCase="'list'">List View</div>
     <div *ngSwitchDefault>Otherwise</div>
 </div>
+
+<button
+[ngStyle]="{
+    'backgroundColor': viewMode!='list'?'green':'red',
+    color:viewMode!='list'?'white':'#333'
+}"
+>
+    Check
+</button>
+
+<p>
+    {{
+        safeTraversal?.name
+    }}
+</p>
+
+
+
+

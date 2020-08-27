@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivesComponent {
   courses = [1, 2];
   viewMode = 'map';
+  safeTrasversalCheck={
+    name:null
+  };
   loopData;
   onAdd() {
     this.loopData.push({
