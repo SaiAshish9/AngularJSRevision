@@ -9,6 +9,7 @@ import { CourseComponent } from './course/course.component';
 import { CoursesService } from './courses.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgContentComponent } from './ng-content/ng-content.component';
     CoursesComponent,
     SummaryPipe,
     FavoriteComponent,
-    NgContentComponent
+    NgContentComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,

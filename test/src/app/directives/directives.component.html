@@ -1,0 +1,21 @@
+<p>directives works!</p>
+
+<div *ngIf="courses.length>0; else noCourses ">
+    List of courses
+</div>
+
+<div *ngIf="courses.length>0;then courses1  else noCourses ">
+</div>
+
+<div *ngFor="let course of courses;">
+    {{course}}
+</div>
+
+
+<ng-template #courses1>
+    courses
+</ng-template>
+
+<ng-template #noCourses>
+    Hi
+</ng-template>
