@@ -10,6 +10,7 @@ import { CoursesService } from './courses.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { InputFormatDirective } from './input-format.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DirectivesComponent } from './directives/directives.component';
     SummaryPipe,
     FavoriteComponent,
     NgContentComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    InputFormatDirective
   ],
   imports: [
     BrowserModule,

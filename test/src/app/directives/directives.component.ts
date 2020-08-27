@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivesComponent {
   courses = [1, 2];
   viewMode = 'map';
-  safeTrasversalCheck={
+  safeTraversal={
     name:null
   };
   loopData;
