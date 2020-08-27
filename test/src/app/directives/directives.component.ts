@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class DirectivesComponent {
   courses = [1, 2];
   viewMode = 'map';
+  loopData;
   onAdd() {
     this.loopData.push({
       id: 2,
@@ -16,15 +17,20 @@ export class DirectivesComponent {
   }
   onChange(course) {
     course.name = 'UPDATED';
-    // let index=this.loopData.indexOf(course);
-    // this.loopData.splice(index,1);
   }
+  loadCourses() {
+    this.loopData = [
+      { id: 0, name: 'list option 1' },
+      { id: 1, name: 'list option 2' },
+    ];
+  }
+
+  trackCourse(index,course){
+   return course?course.id:undefined;
+  }
+
   onRemove(course) {
-    let index=this.loopData.indexOf(course);
-    this.loopData.splice(index,1);
-    }
-  loopData = [
-    { id: 0, name: 'list option 1' },
-    { id: 1, name: 'list option 2' },
-  ];
+    let index = this.loopData.indexOf(course);
+    this.loopData.splice(index, 1);
+  }
 }

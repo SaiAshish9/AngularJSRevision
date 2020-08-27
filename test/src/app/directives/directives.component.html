@@ -6,19 +6,21 @@
 
 <div *ngIf="courses.length>0;then courses1  else noCourses ">
 </div>
-
+<br />
+<button (click)="loadCourses()" class="btn btn-success">Load Courses</button>
+<br />
 <button class="btn btn-success" (click)="onAdd()">Add</button>
 
-<div *ngFor="let course of loopData; index as i; even as isEven;">
+<div *ngFor="let course of loopData; index as i; even as isEven;
+trackBy:trackCourse
+">
     {{i}}- {{course.name}}
 
     <span *ngIf="isEven">
         EVEN
     </span>
-    <button 
-    (click)="onRemove(course)"
-    class="btn btn-danger">
-     X
+    <button (click)="onRemove(course)" class="btn btn-danger">
+        X
     </button>
     <button (click)="onChange(course)" class="btn btn-warning">
         i
