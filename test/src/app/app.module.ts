@@ -1,3 +1,4 @@
+import { PrettyPrintPipe } from './json.pipe';
 import { SummaryPipe } from './summary.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     CourseComponent,
     CoursesComponent,
     SummaryPipe,
+    PrettyPrintPipe,
     FavoriteComponent,
     NgContentComponent,
     DirectivesComponent,
