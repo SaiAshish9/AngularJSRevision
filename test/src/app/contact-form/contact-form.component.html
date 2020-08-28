@@ -1,26 +1,36 @@
 <form  #f="ngForm" (ngSubmit)="submit(f)">
     <!-- zencoding -> quickly generating mark-up -->
+    <div ngModelGroup="contact" #contact="ngModelGroup">
+    
+     <div *ngIf="!contact.valid; else validForm">
+          invalid form
+     </div>   
+
+     <ng-template #validForm>
+         valid form
+     </ng-template>
+
     <div class="form-group">
         <label for="firstName">
             First Name
         </label>
         <!-- template driven approach -->
         <!-- pattern only banana is valid -->
-        <input
-         minlength="3" 
-         maxlength="10" 
-         pattern="banana" 
-         required 
-         ngModel 
-         name="firstName" 
-         #firstName="ngModel"
-        (change)="log(firstName)" 
+        <!-- pattern="banana" -->
+        <input 
+        minlength="3" 
+        maxlength="10"
+        required 
+        ngModel 
+        name="firstName" 
+        #firstName="ngModel"
+        (change)="log(firstName)"
         type="text" 
         id="firstName" 
         class="form-control">
         <div class="alert alert-danger" *ngIf="
-        firstName.touched &&
-        !firstName.valid">
+            firstName.touched &&
+            !firstName.valid">
             <div *ngIf="firstName.errors.required">
                 First Name is required
             </div>
@@ -32,6 +42,9 @@
             </div>
         </div>
     </div>
+    </div>
+    
+
     <div class="form-group">
         <label for="comment">
             Comment
