@@ -21,6 +21,16 @@ export class ReactiveFormComponent {
     ),
     password: new FormControl('', Validators.required),
   });
+
+  login() {
+    // let isValid = authService.login(this.form.value);
+    // if(!isValid) {
+      this.form.setErrors({
+        inValigLogin: true,
+      })
+    // }
+  }
+
   get username() {
     return this.form.get('username');
   }
