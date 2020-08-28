@@ -11,6 +11,7 @@ import { FavoriteComponent } from './favorite/favorite.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { InputFormatDirective } from './input-format.directive';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { InputFormatDirective } from './input-format.directive';
     FavoriteComponent,
     NgContentComponent,
     DirectivesComponent,
-    InputFormatDirective
+    InputFormatDirective,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
