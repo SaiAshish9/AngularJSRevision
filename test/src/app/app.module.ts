@@ -2,7 +2,7 @@ import { PrettyPrintPipe } from './json.pipe';
 import { SummaryPipe } from './summary.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
@@ -15,6 +15,8 @@ import { InputFormatDirective } from './input-format.directive';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FormArrayComponent } from './form-array/form-array.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,17 +31,19 @@ import { FormArrayComponent } from './form-array/form-array.component';
     InputFormatDirective,
     ContactFormComponent,
     ReactiveFormComponent,
-    FormArrayComponent
+    FormArrayComponent,
+    PostsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [
     // CoursesService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
