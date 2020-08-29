@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponent } from './courses.component';
 import { CourseComponent } from './course/course.component';
-import { CoursesService } from './courses.service';
+import { CoursesService } from './services/courses.service';
 import { FavoriteComponent } from './favorite/favorite.component';
 import { NgContentComponent } from './ng-content/ng-content.component';
 import { DirectivesComponent } from './directives/directives.component';
