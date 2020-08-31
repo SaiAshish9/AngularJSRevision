@@ -1,6 +1,7 @@
 import { PrettyPrintPipe } from './json.pipe';
 import { SummaryPipe } from './summary.pipe';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { FormArrayComponent } from './form-array/form-array.component';
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RoutesComponent } from './routes/routes.component';
+import { AnimationsComponent } from './animations/animations.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormComponent,
     FormArrayComponent,
     PostsComponent,
+    RoutesComponent,
+    AnimationsComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [
     // CoursesService
