@@ -15,6 +15,7 @@ export class AppComponent  implements OnInit {
     isFavorite: true,
   };
 
+
 constructor(private http: HttpClient){
 
 }
