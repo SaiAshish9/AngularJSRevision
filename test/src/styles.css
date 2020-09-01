@@ -3,8 +3,16 @@
 
 body{
     padding: 20px;
+  
+}
+
+  *:focus {
+    outline: none !important;
+    border: 0 !important;
 }
 
 .form-control.ng-touched.ng-invalid{
 border: 2px solid red;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

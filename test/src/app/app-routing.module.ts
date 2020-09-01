@@ -1,55 +1,98 @@
 import { NgModule, Component, OnInit } from '@angular/core';
-import { Routes, RouterModule, ActivatedRoute, Router } from '@angular/router';
+import {
+  Routes,
+  RouterModule,
+  ActivatedRoute,
+  Router,
+  Params,
+} from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'home',
-  template: `<button class="btn btn-primary" (click)="submit()">Home</button>`,
+  template: `
+  <button class="btn btn-primary" (click)="submit()">Home</button>`,
 })
 class HomeComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
+  paramsSubscription: Subscription;
+
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
-      console.log(+params.get('id'));
-    });
+    // this.paramsSubscription = this.route.params.subscribe((params: Params) => {
+    //   console.log(+params['id']);
+    // });
+    console.log(this.route.snapshot);
   }
 
+  //  this.route.params.subscribe((params:Params) => {
+  //  this.user.id = params['id']
+  //  })
+
   submit() {
-    this.router.navigate(['/test'], {
-      queryParams: { page: 2, order: 'new' },
+    this.router.navigate(['test/1/2'], {
+      queryParams: { page: 2, name: 'new' },
+      fragment: 'loading',
     });
+
+    //  this.router.navigate(['servers'], {
+    //  relativeTo: this.route
+    //  })
   }
 }
 
 @Component({
   selector: 'test',
-  template: '<h1>Test</h1>',
+  template: `
+    <div>
+      <h1>Test</h1>
+    </div>
+  `,
 })
 class TestComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // notifies whenever id changes
-    // this.route.paramMap.subscribe((params) => {
-    //   console.log(+params.get('id'));
-    // });
-    console.log(this.route.paramMap['id']);
     console.log(
+      this.route.snapshot.params,
       this.route.snapshot.paramMap.get('id'),
       this.route.snapshot.paramMap.get('username'),
-      this.route.snapshot.queryParamMap.get('page')
+      this.route.snapshot.queryParamMap.get('page'),
+      this.route.snapshot.fragment
     );
   }
 }
 
 const routes: Routes = [
   {
-    path: 'test',
+    path: 'home',
     component: HomeComponent,
+    children: [
+      {
+        path: ':id',
+        component: HomeComponent,
+      },
+    ],
   },
+  // {
+  //   path: 'home/:id',
+  //   component: HomeComponent,
+  //   // children: [
+  //   //   {
+  //   //     path: ':id',
+  //   //     component: HomeComponent,
+  //   //   },
+  //   // ],
+  // },
   {
-    path: 'test/:id/:username',
+    path: 'test',
     component: TestComponent,
+    children: [
+      {
+        path: ':id/:name',
+        component: TestComponent,
+      },
+    ],
   },
 ];
 

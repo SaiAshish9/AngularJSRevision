@@ -1,3 +1,4 @@
+import { MaterialModule } from './material.module';
 import { PrettyPrintPipe } from './json.pipe';
 import { SummaryPipe } from './summary.pipe';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,6 +21,11 @@ import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RoutesComponent } from './routes/routes.component';
 import { AnimationsComponent } from './animations/animations.component';
+import { AppUnlessDirective } from './app-unless.directive';
+import { NgmaterialComponent } from './ngmaterial/ngmaterial.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +44,9 @@ import { AnimationsComponent } from './animations/animations.component';
     PostsComponent,
     RoutesComponent,
     AnimationsComponent,
+    AppUnlessDirective,
+    NgmaterialComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +54,9 @@ import { AnimationsComponent } from './animations/animations.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [
     // CoursesService
