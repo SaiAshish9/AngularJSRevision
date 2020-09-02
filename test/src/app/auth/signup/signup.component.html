@@ -1,0 +1,52 @@
+<section id="container">
+    <div id="child1" class="child"></div>
+    <div id="child2" class="child"></div>
+    <div id="child3" class="child"></div>
+</section>
+
+<section class="signup-form">
+    <form #f="ngForm" fxLayoutGap="10px" fxLayout="column" (ngSubmit)="onSubmit(f)" fxLayoutAlign="center center">
+        <!-- mainAxisAlignment crossAxisAlignment -->
+        <mat-form-field>
+            <input #emailInput="ngModel" required type="email" name="email" matInput email autocomplete="off" ngModel
+                placeholder="Email" />
+            <mat-error *ngIf="emailInput.hasError('required')">
+                E-mail is required
+            </mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">
+                E-mail is invalid
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field hintLabel="Should be at least 6 characters">
+            <input minlength="6" required type="password" matInput ngModel autocomplete="off" name="password"
+                placeholder="Password" #pw="ngModel" />
+            <mat-hint align="end">
+                {{ pw.value?.length }} / 6
+            </mat-hint>
+        </mat-form-field>
+        <mat-form-field>
+            <input ngModel name="birthdate" required matInput [max]="maxDate" [matDatepicker]="picker"
+                placeholder="Birth Date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-checkbox color="primary" ngModel name="agree" required>
+            Agree To Terms And Conditions
+        </mat-checkbox>
+        <button [disabled]="f.invalid" mat-raised-button color="primary">Submit</button>
+    </form>
+
+    <!-- <div style="margin-top:50px;" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="center center">
+        <button [disabled]="selected===1" (click)="prev()" mat-raised-button color="primary">
+            < </button>
+                <div @slide [ngSwitch]="selected">
+                    <div *ngSwitchCase="1" style="height:100px;width:100px;backgroundColor:red;"></div>
+                    <div *ngSwitchCase="2" style="height:100px;width:100px;backgroundColor:green;"></div>
+                    <div *ngSwitchCase="3" style="height:100px;width:100px;backgroundColor:yellow;"></div>
+                </div>
+                <button [disabled]="selected===3" mat-raised-button color="primary" (click)="next()">></button>
+
+    </div> -->
+
+
+</section>

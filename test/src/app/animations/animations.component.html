@@ -1,0 +1,17 @@
+<button @fade @slide class="list-group-item">
+    Fade
+</button>
+
+
+<ul>
+    <li
+     (click)="onDelete(i)"
+     [@list]="!true && 'in'" 
+     style="cursor: pointer;"  
+     (@list.start)="console.log($event)"
+     (@list.done)="console.log($event)"
+     *ngFor="let item of list;index as i"
+    >
+        {{item}}
+    </li>
+</ul>

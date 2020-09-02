@@ -1,0 +1,17 @@
+<li routerLinkActive="text-success">
+    <a routerLink="home">
+        Home
+    </a>
+</li>
+
+<li routerLinkActive="text-success">
+    <a 
+    [queryParams]="{page:1,order:'1'}"
+    [routerLink]="['/test/',1,2]"
+    fragment="loading"
+    >
+        Test
+    </a>
+</li>
+
+<router-outlet></router-outlet>
