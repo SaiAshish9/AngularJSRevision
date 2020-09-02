@@ -12,6 +12,11 @@
 <button mat-raised-button color="primary">Primary</button>
 <button mat-button disabled>Disabled</button> -->
 
+
+
+
+
+
 <mat-sidenav-container fullscreen>
     <mat-sidenav role="navigation" #sidenav>
         <p>
@@ -30,7 +35,7 @@
             <div>
                 LOGO
             </div>
-            <div fxFlex fxLayout fxLayoutAlign="flex-end">
+            <div fxHide.xs fxFlex fxLayout fxLayoutAlign="flex-end">
                 <ul fxLayoutGap="10px" fxLayout class="navigation-items">
                     <li>
                         <a routerLink="/home">Signup</a>
@@ -41,8 +46,15 @@
                 </ul>
             </div>
         </mat-toolbar>
-        <main>
+        <main fxLayoutAlign="center center" fxLayout="column" fxLayoutGap="40px">
             <app-signup></app-signup>
+            {{ message | async }}
+
+            <button
+             mat-raised-button color="primary" (click)="setA()">
+                setA
+            </button>
+
         </main>
     </mat-sidenav-content>
 </mat-sidenav-container>

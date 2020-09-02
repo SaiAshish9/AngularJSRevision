@@ -25,6 +25,7 @@ import { AppUnlessDirective } from './app-unless.directive';
 import { NgmaterialComponent } from './ngmaterial/ngmaterial.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {StateManagementModule} from './reducers/index';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    StateManagementModule
   ],
   providers: [
     // CoursesService
